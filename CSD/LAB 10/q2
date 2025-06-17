@@ -1,0 +1,18 @@
+        LDA one
+        STO A
+        INP
+        STO Z
+        BRP loop
+loop    BRZ end
+        SUB one
+        STO Z
+        LDA A
+        OUT 
+        ADD one
+        STO A
+        LDA Z
+        BRA loop
+end     HLT
+Z       DAT
+A       DAT 1
+one     DAT 1

@@ -1,0 +1,33 @@
+
+        STO A
+        INP
+        STO B
+        LDA A
+        BRZ zero
+        LDA zr
+        STO ans
+        LDA B
+        BRZ zeroB
+        ADD one
+loop    SUB one
+        STO B
+        BRZ end
+        LDA ans
+        ADD A
+        STO ans
+        LDA B
+        BRA loop
+end     LDA ans
+        OUT
+        HLT
+zero    LDA A
+        OUT 
+        HLT
+zeroB   LDA B
+        OUT
+        HLT
+B       DAT
+A       DAT
+one     DAT 1
+ans     DAT 0
+zr      DAT 0

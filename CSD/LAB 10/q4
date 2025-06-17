@@ -1,0 +1,27 @@
+        LDA zr
+        STO count
+        INP 
+        STO A
+        INP 
+        STO Z
+        BRP loop
+loop    LDA count
+        ADD one
+        STO count
+        LDA Z
+        SUB A
+        STO Z
+        BRZ end
+        BRP loop
+        LDA count
+        SUB one
+        OUT
+        HLT
+end     LDA count
+        OUT 
+        HLT
+A       DAT 
+Z       DAT 
+one     DAT 1
+count   DAT 0
+zr      DAT 0
